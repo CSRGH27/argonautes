@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+	<div class="header">
+		<img src="{{ asset("img/logo.png") }}" alt="">
+		<h1>Les Argonautes</h1>
+	</div>
+	<div class="container">
+		<div class="row">
+			<div class="col"></div>
+			<div class="col-8 ">
+				<div class="ctn-form">
+					{{ form(form) }}
+					</div>
+				</div>
+				<div class="col"></div>
+			</div>
+			<div class="row">
+				<div class="col"></div>
+				<div class="col-12">
+					<h1 style="text-align: center">Liste des Argonautes</h1>
+					<div class="ctn-argo">
+						{% for argo in argos %}
+							<div class="card-argo">
+								<div class="ctn-img">
+									<span></span>
+								</div>
+								<div class="ctn-txt">
+									<h2>{{argo.name}}
+										{{argo.firstname}}</h2>
+									<h3>{{argo.talent}}</h3>
+								</div>
+							</div>
+						{% endfor %}
+					</div>
+				</div>
+				<div class="col"></div>
+
+
+			</div>
+		</div>
+
+	{% endblock %}
